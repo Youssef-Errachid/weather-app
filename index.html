@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="head">
+        <div class="logo-section">
+            <img class="logo" id="logo" src="images/weather logo.png" alt="logo" width="80" height="80">
+        </div>
+        <h1>Weather App</h1>
+        <div class="Mode-section">
+            <span class="Mode-status" id="Mode1">Light Mode</span>
+            <label class="checkboxMode">
+                <input  type="checkbox" id="Mode">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-section">
+            <input class="input" id="search_input" type="text" id="city" placeholder="Enter city name">
+            <button id="btn_search" id="getWeather">Search</button>
+        </div>
+
+        <div class="location-section">
+            <img class="img_location" src="images/location.webp" alt="location icon" width="40" height="40">
+            <h2 class="city_name">City Name</h2>
+        </div>
+
+        <div class="weather_details">
+                 <div class="weather-item">
+                <img src="images/wind speed.webp" alt="wind speed icon" width="50" height="50">
+                <p id="windSpeed">Wind Speed: -- km/h</p>
+            </div>
+                <div class="weather-item">
+                <img src="images/humidity.webp" alt="humidity icon" width="50" height="50">
+                <p id="humidity">Humidity: --%</p>
+            </div>
+            <div class="weather-item">
+                <img src="images/temerature.webp" alt="temperature icon" width="50" height="50">
+                <p id="temperature">Temperature: --°C</p>
+            </div>
+        
+        </div>
+
+        <div class="status-main">
+            <img class="img_status1" src="images/sunny.webp" alt="status" width="120" height="120">
+        </div>
+
+        <div class="status-secondary">
+            <img class="img_status2" src="images/sunny.webp" alt="status icon" width="40" height="40">
+            <p id="status">Sunny</p>
+        </div>
+    </main>
+
+    <footer id="Mode1">
+        <p >Powered by global weather data networks to deliver accurate forecasts and real-time conditions for your location.</p>
+    </footer>
+    <script src="script.js" ></script>
+</body>
+</html>

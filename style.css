@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+.Mode-section{
+position: relative;
+    right: 40px;
+bottom: 20px;
+width: 140px;
+}
+/* Body styles for light and dark mode */
+body.light-mode {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Checkbox styles */
+.checkboxMode {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.checkboxMode input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #696c6e;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.Mode-status {
+    font-weight: 300;
+    font-size: 14px;
+}
+.search-section{
+            width: 450px;
+display: flex;
+position: relative;
+top:50px;
+left: 50px;
+gap: 10px;
+}
+.input{
+    background-image: url('images/search_icon.png');
+     background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px;
+
+    padding: 8px 12px;
+    width: 300px;
+    height: 40px;
+}
+button{
+ width: 100px;
+ height: 40px;
+ cursor: pointer;
+}
+button:hover{
+    background-color: #14a1ff;
+    color: rgb(5, 5, 5);
+}
+
+.search-section input, button{
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+ }
+
+ .location-section{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    top: 100px;
+    left: 10%;
+ }
+    .city_name{
+        font-size: 54px;
+        font-weight: bold;
+    }
+    .img_location{
+        
+        width: 30px;
+        height: 35px;
+        position: relative;
+        top: 10px;
+    }
+.weather_details{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    top: 150px;
+    left: 5%;
+}
+.status-main{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 62%;
+    bottom: 250px;
+
+  
+}
+.img_status1{
+    display:flex;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    top: 20px;
+
+}
+.status-secondary{
+    width: 250px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+position: relative;
+   left: 850px;
+    bottom: 300px;
+}
+.status-secondary .img_status2{
+    display:flex;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+.status-secondary p{
+    font-size: 20px;
+}
+footer{
+    width: 65%;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 300px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

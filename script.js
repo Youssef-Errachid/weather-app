@@ -1,7 +1,3 @@
-
-const API = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac';
-
-console.log(API);
 // store a reference to the <body> element in a variable for convenience and efficiency.
 const Body = document.body;
 
@@ -35,17 +31,32 @@ const statusImgSmall = document.getElementById("img_status2");
 // If toggle is ON (checked) applay the dark mode css and update text color css and change the logo to another logo that contain the black background 
 // If toggle is OFF (unchecked) applay the light mode css and update text color css and change the logo to another logo that contain the white background 
 
+
+
 toggle.addEventListener('change', function() {
     if (this.checked) {
         Body.className = 'dark-mode';
         modeText.textContent = 'Dark Mode';
-       logo.src = "images/img_dark_version.png";
+        logo.src = "images/img_dark_version.png";
+   localStorage.setItem("Mode","dark-mode");
     } else {
         Body.className = 'light-mode';
         modeText.textContent = 'Light Mode';
         logo.src = "images/img_light_version.png";
+ localStorage.setItem("Mode","light-mode");
     }
 });
+// when the page load check if the mode is dark or light from the local storage and applay it.
+addEventListener('load',function(){
+
+    let mode = localStorage.getItem("Mode")
+    if(mode === "dark-mode"){
+        toggle.checked = true;
+        Body.className = 'dark-mode';
+        modeText.textContent = 'Dark Mode';
+        logo.src = "images/img_dark_version.png";
+    }
+})
 
 // async allows using await inside the function.
 // Creates the API URL using template literals.
@@ -72,12 +83,16 @@ async function getWeahter(city){
         windSpeed.textContent = `Wind Speed: ${data.wind.speed} km/h`;
         humidity.textContent = `Humidity: ${data.main.humidity}%`;
         temperature.textContent = `Temperature: ${data.main.temp}°C`;
-        statusText.textContent = data.weather[0].description;
+        statusText.textContent = data.weather[0].main;
 
 
     UpdateWeatherImages(data.weather[0].main);
 
 }
+
+// update weather image when the status change.
+// data type of status is string .
+// change the string to lower case using tolowercase function. 
 
 function UpdateWeatherImages(status){
     switch(status.toLowerCase()){
@@ -98,7 +113,7 @@ function UpdateWeatherImages(status){
             statusImgSmall.src = `images/animated/snowy-6.svg`;
             break;
         default :
-
+        alert("images of status is not found!");
     }
 }
 // click the search button and handles the search action.
@@ -110,7 +125,7 @@ searchBtn.addEventListener("click", () => {
 });
 
 //adding a city at the begining by difaulte 
-// getWeahter('rabat');
+//getWeahter('rabat');
 
 
 
